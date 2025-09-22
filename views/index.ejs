@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" class="mdc-typography">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= name %> - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
+<body class="mdc-typography">
+  <nav class="navbar navbar-expand-lg mdc-top-app-bar mdc-top-app-bar--fixed">
+    <div class="container">
+      <a class="navbar-brand mdc-top-app-bar__title" href="#"><%= name %></a>
+      <button class="navbar-toggler mdc-icon-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="material-icons mdc-icon-button__icon">menu</span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mdc-top-app-bar__action-items">
+          <li class="nav-item"><a class="nav-link mdc-top-app-bar__action-item" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link mdc-top-app-bar__action-item" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link mdc-top-app-bar__action-item" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link mdc-top-app-bar__action-item" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link mdc-top-app-bar__action-item" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link mdc-top-app-bar__action-item" href="#leadership">Leadership</a></li>
+          <li class="nav-item"><a class="nav-link mdc-top-app-bar__action-item" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero-section">
+    <div class="hero-container">
+      <!-- Background Elements -->
+      <div class="hero-bg-elements">
+        <div class="bg-gradient-1"></div>
+        <div class="bg-gradient-2"></div>
+        <div class="bg-gradient-3"></div>
+        <div class="floating-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="greeting">
+            <span class="greeting-text">Hello, I'm</span>
+          </div>
+          
+          <h1 class="hero-name">
+            <span class="name-line">Guthi Manideep</span>
+          </h1>
+          
+          <div class="hero-title">
+            <span class="title-text">Full-Stack Developer</span>
+            <div class="title-underline"></div>
+          </div>
+          
+          <p class="hero-description">
+            I’m a Computer Science Engineering student passionate about creating websites and software that make an impact. This portfolio is a showcase of my journey, projects, and skills as I grow into a better developer every day.
+          </p>
+        </div>
+        
+        <div class="hero-actions">
+          <div class="action-buttons">
+            <a href="#" class="btn btn-resume" onclick="trackClick('resume', '/')">
+              <i class="fas fa-file-alt"></i>
+          <span>Resume</span>
+            </a>
+            <a href="#" class="social-link" onclick="trackClick('github', '/')" title="GitHub">
+              <i class="fab fa-github"></i>
+        </a>
+            <a href="#" class="social-link" onclick="trackClick('linkedin', '/')" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+            <a href="#" class="social-link" onclick="trackClick('instagram', '/')" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+          </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-6">
+    <div class="container">
+      <h2 class="text-center mb-5 mdc-typography--headline4">About Me</h2>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-6 order-md-2 mb-4 mb-md-0 text-center">
+          <img src="/profile pic/pic2.jpg" alt="Profile" class="shadow-lg image-animate-on-scroll profile-pic" />
+        </div>
+        <div class="col-md-6 order-md-1 text-center">
+          <p class="lead mdc-typography--body1">Computer Science Engineering student with a strong interest in web development and software development. Looking to apply my skills in real-world projects, gain hands-on experience, and grow as a developer in a collaborative environment.</p>
+          <!-- <p class="mdc-typography--body2">I have hands-on experience through personal projects and internships, and I am committed to continuous learning and building scalable web applications using modern frameworks and best practices.</p> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section" data-animate-scroll>
+    <div class="skills-container">
+      <!-- Background Elements -->
+      <div class="skills-bg-elements">
+        <div class="skills-gradient-1"></div>
+        <div class="skills-gradient-2"></div>
+        <div class="skills-gradient-3"></div>
+        <div class="skills-particles">
+          <div class="skill-particle"></div>
+          <div class="skill-particle"></div>
+          <div class="skill-particle"></div>
+          <div class="skill-particle"></div>
+          <div class="skill-particle"></div>
+          <div class="skill-particle"></div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="skills-content">
+        <div class="skills-header">
+          <h2 class="skills-title">
+            <span class="skills-title-text">Skills</span>
+          </h2>
+          <p class="skills-subtitle">Technical Expertise & Tools</p>
+        </div>
+        
+        <div class="skills-grid">
+          <!-- Programming Languages -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <h3 class="skill-category-title">Programming Languages</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="/photos/java.png" alt="Java logo" class="skill-icon-inline" />
+                <span class="skill-name">Java</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/py.png" alt="Python logo" class="skill-icon-inline" />
+                <span class="skill-name">Python</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/js.png" alt="JavaScript logo" class="skill-icon-inline" />
+                <span class="skill-name">JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/html.png" alt="HTML5 logo" class="skill-icon-inline" />
+                <span class="skill-name">HTML</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/css.png" alt="CSS3 logo" class="skill-icon-inline" />
+                <span class="skill-name">CSS</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Frameworks & Libraries -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <h3 class="skill-category-title">Frameworks & Libraries</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="/photos/react.png" alt="React logo" class="skill-icon-inline" />
+                <span class="skill-name">React.js</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/node.png" alt="Node.js logo" class="skill-icon-inline" />
+                <span class="skill-name">Node.js</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/ex.png" alt="Express.js logo" class="skill-icon-inline" />
+                <span class="skill-name">Express.js</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/boot.png" alt="Bootstrap logo" class="skill-icon-inline" />
+                <span class="skill-name">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Databases -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <h3 class="skill-category-title">Databases</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="/photos/mysql.png" alt="MySQL logo" class="skill-icon-inline" />
+                <span class="skill-name">MySQL</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/mongo.png" alt="MongoDB logo" class="skill-icon-inline" />
+                <span class="skill-name">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Developer Tools & Platforms -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <h3 class="skill-category-title">Developer Tools & Platforms</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="/photos/vscode.png" alt="VS Code logo" class="skill-icon-inline" />
+                <span class="skill-name">VS Code</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/git.png" alt="Git logo" class="skill-icon-inline" />
+                <span class="skill-name">Git</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/github.png" alt="GitHub logo" class="skill-icon-inline" />
+                <span class="skill-name">GitHub</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/render.png" alt="Render logo" class="skill-icon-inline" />
+                <span class="skill-name">Render</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Creative & Design Tools -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <h3 class="skill-category-title">Creative & Design Tools</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="/photos/canva.png" alt="Canva logo" class="skill-icon-inline" />
+                <span class="skill-name">Canva</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/lr.png" alt="Lightroom logo" class="skill-icon-inline" />
+                <span class="skill-name">Lightroom</span>
+              </div>
+              <div class="skill-item">
+                <img src="/photos/snapseed.png" alt="Snapseed logo" class="skill-icon-inline" />
+                <span class="skill-name">Snapseed</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-video skill-icon-inline"></i>
+                <span class="skill-name">Video Editing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <div class="projects-container">
+      <!-- Background Elements -->
+      <div class="projects-bg-elements">
+        <div class="projects-gradient-1"></div>
+        <div class="projects-gradient-2"></div>
+        <div class="projects-gradient-3"></div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="projects-content">
+        <div class="projects-header">
+          <h2 class="projects-title">
+            <span class="projects-title-text">Featured Projects</span>
+          </h2>
+          <p class="projects-subtitle">Portfolio Showcase</p>
+        </div>
+        
+        <div class="projects-slideshow-container">
+          <div class="projects-slideshow" id="projectsSlideshow">
+            <div class="project-card">
+              <div class="project-image">
+                <img src="https://via.placeholder.com/300x200/6750A4/FFFFFF?text=Project+1" alt="Project 1" />
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">E-Commerce Platform</h3>
+                <p class="project-description">A full-stack e-commerce solution with React and Node.js.</p>
+              <a href="#" class="btn btn-primary" onclick="trackClick('project-link', '/')">View Details</a>
+            </div>
+          </div>
+            
+            <div class="project-card">
+              <div class="project-image">
+                <img src="/public/photos/pj1.jpg" alt="Project 2" />
+        </div>
+              <div class="project-content">
+                <h3 class="project-title">Task Management App</h3>
+                <p class="project-description">A collaborative task manager built with MERN stack.</p>
+              <a href="#" class="btn btn-primary" onclick="trackClick('project-link', '/')">View Details</a>
+            </div>
+          </div>
+            
+            <div class="project-card">
+              <div class="project-image">
+                <img src="https://via.placeholder.com/300x200/B58392/FFFFFF?text=Project+3" alt="Project 3" />
+        </div>
+              <div class="project-content">
+                <h3 class="project-title">Data Visualization Dashboard</h3>
+                <p class="project-description">Interactive dashboard using D3.js and Express.</p>
+              <a href="#" class="btn btn-primary" onclick="trackClick('project-link', '/')">View Details</a>
+              </div>
+            </div>
+            
+            <!-- <div class="project-card">
+              <div class="project-image">
+                <img src="https://via.placeholder.com/300x200/8A2BE2/FFFFFF?text=Project+4" alt="Project 4" />
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Social Media App</h3>
+                <p class="project-description">A modern social platform with real-time features.</p>
+                <a href="#" class="btn btn-primary" onclick="trackClick('project-link', '/')">View Details</a>
+              </div>
+            </div> -->
+            
+            <!-- <div class="project-card">
+              <div class="project-image">
+                <img src="https://via.placeholder.com/300x200/4B0082/FFFFFF?text=Project+5" alt="Project 5" />
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">AI Chatbot</h3>
+                <p class="project-description">Intelligent chatbot with machine learning capabilities.</p>
+                <a href="#" class="btn btn-primary" onclick="trackClick('project-link', '/')">View Details</a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="education-section">
+    <div class="education-container">
+      <!-- Background Elements -->
+      <div class="education-bg-elements">
+        <div class="education-gradient-1"></div>
+        <div class="education-gradient-2"></div>
+        <div class="education-gradient-3"></div>
+        <div class="education-particles">
+          <div class="education-particle"></div>
+          <div class="education-particle"></div>
+          <div class="education-particle"></div>
+          <div class="education-particle"></div>
+          <div class="education-particle"></div>
+          <div class="education-particle"></div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="education-content">
+        <div class="education-header">
+          <h2 class="education-title">
+            <span class="education-title-text">Education</span>
+            <div class="education-title-underline"></div>
+          </h2>
+          <p class="education-subtitle">Academic Journey & Achievements</p>
+        </div>
+        
+        <div class="education-timeline">
+          <div class="timeline-line"></div>
+          
+          <div class="education-item">
+            <div class="education-timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+          <div class="education-card">
+              <div class="education-card-header">
+                <div class="education-degree-year">
+                  <h3 class="education-degree">B.Tech in Computer Science Engineering</h3>
+                  <span class="duration-text">2022 – Present</span>
+                </div>
+                <p class="education-institution">Anurag University</p>
+                <span class="status-badge current">Current</span>
+          </div>
+              <div class="education-card-content">
+                <p class="education-description">Exploring the depths of computer science through hands-on projects, from algorithms to system design. Building a strong foundation in software development and problem-solving.</p>
+                <div class="education-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">CGPA</span>
+                    <span class="stat-value">8.36</span>
+            </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Semester</span>
+                    <span class="stat-value">6th</span>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+          
+          <div class="education-item">
+            <div class="education-timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+          <div class="education-card">
+              <div class="education-card-header">
+                <div class="education-degree-year">
+                  <h3 class="education-degree">Higher Secondary (XII, SSC)</h3>
+                  <span class="duration-text">2022</span>
+                </div>
+                <p class="education-institution">Sri Chaitanya Junior College</p>
+                <span class="status-badge completed">Completed</span>
+              </div>
+              <div class="education-card-content">
+                <p class="education-description">Discovered a growing interest in technology and problem-solving. Focused on mathematics and science subjects that laid the foundation for my engineering journey.</p>
+                <div class="education-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">Percentage</span>
+                    <span class="stat-value">87.6%</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Stream</span>
+                    <span class="stat-value">MPC</span>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+          
+          <div class="education-item">
+            <div class="education-timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+            <div class="education-card">
+              <div class="education-card-header">
+                <div class="education-degree-year">
+                  <h3 class="education-degree">Secondary School (X, SSC)</h3>
+                  <span class="duration-text">2020</span>
+                </div>
+                <p class="education-institution">Sri Chaitanya Techno School</p>
+                <span class="status-badge completed">Completed</span>
+              </div>
+              <div class="education-card-content">
+                <p class="education-description">Where it all began — a love for learning, logic, and curiosity about how things work. Developed strong analytical thinking and problem-solving skills.</p>
+                <div class="education-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">GPA</span>
+                    <span class="stat-value">9.8</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Grade</span>
+                    <span class="stat-value">A+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="experience-section">
+    <div class="experience-container">
+      <!-- Background Elements -->
+      <div class="experience-bg-elements">
+        <div class="experience-gradient-1"></div>
+        <div class="experience-gradient-2"></div>
+        <div class="experience-gradient-3"></div>
+        <div class="experience-particles">
+          <div class="experience-particle"></div>
+          <div class="experience-particle"></div>
+          <div class="experience-particle"></div>
+          <div class="experience-particle"></div>
+          <div class="experience-particle"></div>
+          <div class="experience-particle"></div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="experience-content">
+        <div class="experience-header">
+          <h2 class="experience-title">
+            <span class="experience-title-text">Experience</span>
+            <div class="experience-title-underline"></div>
+          </h2>
+          <p class="experience-subtitle">Professional Journey & Growth</p>
+        </div>
+        
+        <div class="experience-timeline">
+          <div class="timeline-line"></div>
+          
+          <div class="experience-item">
+            <div class="experience-timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+            <div class="experience-card">
+              <div class="experience-card-header">
+                <div class="experience-position-year">
+                  <h3 class="experience-position">Backend Developer Intern</h3>
+                  <span class="duration-text">2025</span>
+                </div>
+                <p class="experience-company">Cloud Credits Technology</p>
+                <span class="status-badge current">Current</span>
+              </div>
+              <div class="experience-card-content">
+                <p class="experience-description">Developed and maintained server-side logic, databases, and APIs. Collaborated with front-end developers to integrate user-facing elements with server-side logic. Focused on creating robust and scalable backend solutions.</p>
+                <div class="experience-skills">
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Express.js</span>
+                  <span class="skill-tag">MongoDB</span>
+                  <span class="skill-tag">Git</span>
+          </div>
+            </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+  </section>
+
+  <section id="leadership" class="leadership-section">
+    <div class="leadership-container">
+      <!-- Background Elements -->
+      <div class="leadership-bg-elements">
+        <div class="leadership-gradient-1"></div>
+        <div class="leadership-gradient-2"></div>
+        <div class="leadership-gradient-3"></div>
+        <div class="leadership-particles">
+          <div class="leadership-particle"></div>
+          <div class="leadership-particle"></div>
+          <div class="leadership-particle"></div>
+          <div class="leadership-particle"></div>
+          <div class="leadership-particle"></div>
+          <div class="leadership-particle"></div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="leadership-content">
+        <div class="leadership-header">
+          <h2 class="leadership-title">
+            <span class="leadership-title-text">Leadership</span>
+            <div class="leadership-title-underline"></div>
+      </h2>
+          <p class="leadership-subtitle">Leading with Impact & Innovation</p>
+        </div>
+        
+        <div class="leadership-timeline">
+          <div class="timeline-line"></div>
+          
+          <div class="leadership-item">
+            <div class="leadership-timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+          <div class="leadership-card">
+              <div class="leadership-card-header">
+                <div class="leadership-position-year">
+                  <h3 class="leadership-position">Vice President – ACM Student Chapter</h3>
+                  <span class="duration-text">June 2024 – June 2025</span>
+                </div>
+                <p class="leadership-organization">Anurag University</p>
+                <span class="status-badge current">Current</span>
+              </div>
+              <div class="leadership-card-content">
+                <p class="leadership-description">Led and coordinated 5+ technical events including coding contests, workshops, and awareness programs. Involved in planning, outreach, and smooth execution of chapter activities.</p>
+                <div class="leadership-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">Events</span>
+                    <span class="stat-value">5+</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Duration</span>
+                    <span class="stat-value">1 Year</span>
+                  </div>
+                </div>
+                <div class="leadership-achievements">
+                  <div class="achievement-item">
+                    <span class="achievement-title">Career Craft</span>
+                    <span class="achievement-desc">Hosted content creators and entrepreneurs for career guidance</span>
+                  </div>
+                  <div class="achievement-item">
+                    <span class="achievement-title">TechTales</span>
+                    <span class="achievement-desc">Coordinated ML seminar with Dr. Swagatam Das</span>
+                  </div>
+                  <div class="achievement-item">
+                    <span class="achievement-title">Protosphere Visit</span>
+                    <span class="achievement-desc">Led industrial visit to T-Works for prototyping exposure</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="leadership-item">
+            <div class="leadership-timeline-dot">
+              <div class="dot-inner"></div>
+        </div>
+          <div class="leadership-card">
+              <div class="leadership-card-header">
+                <div class="leadership-position-year">
+                  <h3 class="leadership-position">Social Media Lead – Web Club</h3>
+                  <span class="duration-text">May 2024 – May 2025</span>
+                </div>
+                <p class="leadership-organization">Anurag University</p>
+                <span class="status-badge completed">Completed</span>
+              </div>
+              <div class="leadership-card-content">
+                <p class="leadership-description">Handled digital outreach by designing banners, posts, and managing the club's online presence to engage a wider audience and promote events.</p>
+                <div class="leadership-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">Platforms</span>
+                    <span class="stat-value">4+</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Duration</span>
+                    <span class="stat-value">1 Year</span>
+                  </div>
+                </div>
+                <div class="leadership-skills">
+                  <span class="skill-tag">Digital Marketing</span>
+                  <span class="skill-tag">Graphic Design</span>
+                  <span class="skill-tag">Social Media</span>
+                  <span class="skill-tag">Content Creation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <!-- Background Elements -->
+      <div class="contact-bg-elements">
+        <div class="contact-gradient-1"></div>
+        <div class="contact-gradient-2"></div>
+        <div class="contact-gradient-3"></div>
+        <div class="contact-particles">
+          <div class="contact-particle"></div>
+          <div class="contact-particle"></div>
+          <div class="contact-particle"></div>
+          <div class="contact-particle"></div>
+          <div class="contact-particle"></div>
+          <div class="contact-particle"></div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="contact-content">
+        <div class="contact-header">
+          <h2 class="contact-title">
+            <span class="contact-title-text">Contact Me</span>
+            <div class="contact-title-underline"></div>
+          </h2>
+          <p class="contact-subtitle">Have a question or opportunity? Drop a message below.</p>
+        </div>
+
+        <% if (typeof submitted !== 'undefined' && submitted) { %>
+          <div class="contact-success">
+            <i class="fas fa-check-circle"></i>
+            <span>Message sent successfully. I will get back to you soon.</span>
+          </div>
+        <% } %>
+
+        <div class="contact-panel">
+          <form action="/contact" method="POST" class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-input" id="name" name="name" placeholder="Your full name" required />
+                <div class="form-feedback"></div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-input" id="email" name="email" placeholder="your.email@example.com" required />
+                <div class="form-feedback"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Tell me about your project or just say hello!" required></textarea>
+              <div class="form-feedback"></div>
+            </div>
+            <button type="submit" class="btn-contact" onclick="trackClick('contact-submit', '/')">
+              <i class="fas fa-rocket"></i>
+              <span>Send Message</span>
+              <div class="btn-loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Sending...</span>
+              </div>
+            </button>
+            <div id="contactSentMessage" class="sent-message" style="display:none;">Message sent. Thank you!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-name"><%= name %></div>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn" onclick="trackClick('linkedin', '/')"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" title="GitHub" onclick="trackClick('github', '/')"><i class="fab fa-github"></i></a>
+          <a href="#" title="Instagram" onclick="trackClick('instagram', '/')"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:<%= contact %>" title="Email" onclick="trackClick('email', '/')"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; <%= new Date().getFullYear() %> <%= name %>. All rights reserved.</span>
+        <span class="footer-made">Made with <span class="footer-heart">💗</span> by Manu</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

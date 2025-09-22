@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Chat - <%= name %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin-chat.css">
+</head>
+<body>
+    <div class="admin-chat-container">
+        <!-- Admin Header -->
+        <div class="admin-header">
+            <div class="admin-nav">
+                <a href="/admin/dashboard" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Dashboard</span>
+                </a>
+                <div class="admin-info">
+                    <div class="admin-avatar">A</div>
+                    <div class="admin-details">
+                        <h3>Admin Panel</h3>
+                        <span class="admin-status">Online</span>
+                    </div>
+                </div>
+                <a href="/admin/logout" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Chat Interface -->
+        <div class="chat-interface">
+            <!-- User List Sidebar -->
+            <div class="user-sidebar">
+                <div class="sidebar-header">
+                    <h4>Active Users</h4>
+                    <div class="user-count" id="userCount">0 users</div>
+                </div>
+                <div class="user-list" id="userList">
+                    <!-- Users will be populated here -->
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <h3 id="chatTitle">Select a user to start chatting</h3>
+                        <span class="connection-status" id="connectionStatus">Connected</span>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <div class="welcome-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Welcome to Admin Chat</h4>
+                        <p>Select a user from the sidebar to start a conversation</p>
+                    </div>
+                </div>
+
+                <div class="chat-typing-indicator" id="typingIndicator">
+                    <span class="typing-text">User is typing</span>
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="chat-input-area" id="chatInputArea" style="display: none;">
+                    <input type="text" id="messageInput" placeholder="Type your message...">
+                    <button id="sendMessageBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/admin-chat.js"></script>
+</body>
+</html>

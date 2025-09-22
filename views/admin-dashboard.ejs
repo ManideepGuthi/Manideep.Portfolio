@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Guthi Manideep</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin-dashboard.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="background-animation">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="header-container">
+      <div class="header-left">
+        <div class="admin-avatar">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="admin-info">
+          <h1>Admin Dashboard</h1>
+          <p>Portfolio Management</p>
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <a href="/admin/chat" class="chat-btn" onclick="console.log('Header Live Chat clicked')">
+          <i class="fas fa-comments"></i>
+          <span>Live Chat</span>
+        </a>
+        <a href="/admin/logout" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="content-container">
+      <!-- Analytics Section -->
+      <section class="analytics-section">
+        <div class="section-header">
+          <h2>Analytics Overview</h2>
+          <p>Real-time portfolio performance metrics</p>
+        </div>
+        
+        <div class="analytics-grid">
+          <div class="metric-card impressions">
+            <div class="metric-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <div class="metric-content">
+              <h3><%= impressions %></h3>
+              <p>Total Impressions</p>
+              <div class="metric-trend">
+                <i class="fas fa-arrow-up"></i>
+                <span>+12% this week</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="metric-card clicks">
+            <div class="metric-icon">
+              <i class="fas fa-mouse-pointer"></i>
+            </div>
+            <div class="metric-content">
+              <h3><%= clicks %></h3>
+              <p>Total Clicks</p>
+              <div class="metric-trend">
+                <i class="fas fa-arrow-up"></i>
+                <span>+8% this week</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="metric-card contacts">
+            <div class="metric-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="metric-content">
+              <h3><%= contacts.length %></h3>
+              <p>Contact Messages</p>
+              <div class="metric-trend">
+                <i class="fas fa-arrow-up"></i>
+                <span>+5% this week</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="metric-card engagement">
+            <div class="metric-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="metric-content">
+              <h3><%= Math.round((clicks / impressions) * 100) || 0 %>%</h3>
+              <p>Engagement Rate</p>
+              <div class="metric-trend">
+                <i class="fas fa-arrow-up"></i>
+                <span>+3% this week</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Messages Section -->
+      <section class="messages-section">
+        <div class="section-header">
+          <h2>Recent Contact Messages</h2>
+          <p>Latest inquiries from visitors</p>
+        </div>
+        
+        <div class="messages-container">
+          <% if (contacts.length > 0) { %>
+            <div class="messages-list">
+              <% contacts.forEach((contact, index) => { %>
+                <div class="message-card">
+                  <div class="message-header">
+                    <div class="message-avatar">
+                      <%= contact.name.charAt(0).toUpperCase() %>
+                    </div>
+                    <div class="message-info">
+                      <h4><%= contact.name %></h4>
+                      <p><%= contact.email %></p>
+                    </div>
+                    <div class="message-time">
+                      <%= contact.date.toLocaleDateString() %>
+                    </div>
+                  </div>
+                  <div class="message-content">
+                    <p><%= contact.message %></p>
+                  </div>
+                  <div class="message-actions">
+                    <a href="mailto:<%= contact.email %>" class="action-btn reply">
+                      <i class="fas fa-reply"></i>
+                      <span>Reply</span>
+                    </a>
+                    <button class="action-btn archive" onclick="archiveMessage('<%= contact._id %>')">
+                      <i class="fas fa-archive"></i>
+                      <span>Archive</span>
+                    </button>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+          <% } else { %>
+            <div class="empty-state">
+              <div class="empty-icon">
+                <i class="fas fa-inbox"></i>
+              </div>
+              <h3>No messages yet</h3>
+              <p>Contact messages from visitors will appear here</p>
+            </div>
+          <% } %>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Quick Actions -->
+  <div class="quick-actions">
+    <a href="/" class="quick-action" target="_blank">
+      <i class="fas fa-external-link-alt"></i>
+      <span>View Portfolio</span>
+    </a>
+    <a href="/admin/chat" class="quick-action" onclick="console.log('Quick Action Live Chat clicked')">
+      <i class="fas fa-comments"></i>
+      <span>Live Chat</span>
+    </a>
+    <button class="quick-action" onclick="refreshData()">
+      <i class="fas fa-sync-alt"></i>
+      <span>Refresh</span>
+    </button>
+  </div>
+
+  <script>
+    // Refresh data function
+    function refreshData() {
+      window.location.reload();
+    }
+
+    // Archive message function
+    function archiveMessage(messageId) {
+      // You could implement this with an API call
+      console.log('Archive message:', messageId);
+      // For now, just show a confirmation
+      if (confirm('Are you sure you want to archive this message?')) {
+        // Implement archive functionality here
+        alert('Message archived successfully!');
+      }
+    }
+
+    // Add loading states to buttons
+    document.querySelectorAll('.action-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (!this.classList.contains('archive')) {
+          this.style.opacity = '0.7';
+          setTimeout(() => {
+            this.style.opacity = '1';
+          }, 1000);
+        }
+      });
+    });
+
+    // Debug: Test Live Chat button
+    document.querySelectorAll('a[href="/admin/chat"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        console.log('Live Chat button clicked!');
+        // Let the default behavior happen
+      });
+    });
+  </script>
+</body>
+</html>

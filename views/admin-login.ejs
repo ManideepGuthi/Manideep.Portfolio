@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Guthi Manideep</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin-login.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="background-animation">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <div class="login-container">
+    <div class="login-card">
+      <!-- Header -->
+      <div class="login-header">
+        <div class="admin-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h1>Admin Portal</h1>
+        <p>Access your portfolio management dashboard</p>
+      </div>
+
+      <!-- Login Form -->
+      <div class="login-form">
+        <% if (typeof error !== 'undefined') { %>
+          <div class="error-message">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span><%= error %></span>
+          </div>
+        <% } %>
+
+        <form action="/admin/login" method="POST" class="form">
+          <div class="input-group">
+            <div class="input-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <div class="input-underline"></div>
+          </div>
+
+          <div class="input-group">
+            <div class="input-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div class="input-underline"></div>
+          </div>
+
+          <button type="submit" class="login-btn">
+            <span class="btn-text">Sign In</span>
+            <div class="btn-loading">
+              <i class="fas fa-spinner fa-spin"></i>
+            </div>
+          </button>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <div class="login-footer">
+        <a href="/" class="back-to-site">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Form loading state
+    document.querySelector('.form').addEventListener('submit', function() {
+      const btn = document.querySelector('.login-btn');
+      btn.classList.add('loading');
+      btn.querySelector('.btn-text').style.display = 'none';
+      btn.querySelector('.btn-loading').style.display = 'flex';
+    });
+
+    // Input focus effects
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+
+      input.addEventListener('blur', function() {
+        if (!this.value) {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

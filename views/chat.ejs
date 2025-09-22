@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat - <%= name %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <a href="/" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="chat-title">
+                <h3>Live Chat with <%= name %></h3>
+                <span class="connection-status" id="connectionStatus">Connecting...</span>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <!-- Welcome Message -->
+            <div class="message admin-message">
+                <div class="message-avatar">M</div>
+                <div class="message-content">
+                    <span class="message-text">Hello! How can I help you today?</span>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-typing-indicator" id="typingIndicator">
+            <span class="typing-text">Someone is typing</span>
+            <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="chat-input-area">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button id="sendMessageBtn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
