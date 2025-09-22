@@ -11,14 +11,24 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // MongoDB connection
-mongoose.connect('mongodb://127.0.0.1:27017/portfolioDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to MongoDB');
-}).catch((err) => {
-  console.error('MongoDB connection error:', err);
-});
+// mongoose.connect('mongodb://127.0.0.1:27017/portfolioDB', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// }).then(() => {
+//   console.log('Connected to MongoDB');
+// }).catch((err) => {
+//   console.error('MongoDB connection error:', err);
+// });
+
+
+const mongoURI =
+  process.env.MONGO_URI ||
+  "mongodb+srv://manideep:manu@todocluster.h76u0nm.mongodb.net/tododb?retryWrites=true&w=majority&appName=TodoCluster";
+
+mongoose
+  .connect(mongoURI)
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch((err) => console.error("❌ Mongo Error:", err));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
