@@ -275,48 +275,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form submission with loading state
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+      // Allow normal form post (server handles redirect) for maximum reliability
       
-      // Validate all fields
+      // Validate all fields (client-side hints only)
       let isValid = true;
-      inputs.forEach(input => {
-        if (!validateField(input)) {
-          isValid = false;
-        }
-      });
-      
-      if (isValid) {
-        // Rocket fly animation
-        submitBtn.classList.add('fly');
-        showLoadingState();
-        // AJAX submit to avoid page reload
-        const payload = {
-          name: contactForm.name.value.trim(),
-          email: contactForm.email.value.trim(),
-          message: contactForm.message.value.trim()
-        };
-        fetch('/contact', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        }).then(async (r) => {
-          if (r.ok) {
-            const sentMsg = document.getElementById('contactSentMessage');
-            if (sentMsg) {
-              sentMsg.textContent = 'Message sent. Thank you!';
-              sentMsg.style.display = 'inline-block';
-            }
-            contactForm.reset();
-          } else {
-            alert('Failed to send message. Please try again.');
-          }
-        }).catch(() => {
-          alert('Failed to send message. Please try again.');
-        }).finally(() => {
-          submitBtn.classList.remove('loading');
-          submitBtn.disabled = false;
-        });
-      }
+      inputs.forEach(input => { if (!validateField(input)) isValid = false; });
+      if (isValid) { showLoadingState(); }
     });
   }
 });

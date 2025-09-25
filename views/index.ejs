@@ -283,7 +283,7 @@
           <div class="projects-slideshow" id="projectsSlideshow">
             <div class="project-card">
               <div class="project-image">
-                <img src="https://via.placeholder.com/300x200/6750A4/FFFFFF?text=Project+1" alt="Project 1" />
+                <img src="/photos/pj1.jpg" alt="Project 1" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">E-Commerce Platform</h3>
@@ -294,7 +294,7 @@
             
             <div class="project-card">
               <div class="project-image">
-                <img src="/public/photos/pj1.jpg" alt="Project 2" />
+                <img src="/photos/pj1.jpg" alt="Project 2" />
         </div>
               <div class="project-content">
                 <h3 class="project-title">Task Management App</h3>
@@ -305,7 +305,7 @@
             
             <div class="project-card">
               <div class="project-image">
-                <img src="https://via.placeholder.com/300x200/B58392/FFFFFF?text=Project+3" alt="Project 3" />
+                <img src="/photos/pj1.jpg" alt="Project 3" />
         </div>
               <div class="project-content">
                 <h3 class="project-title">Data Visualization Dashboard</h3>
@@ -650,51 +650,44 @@
         </div>
       </div>
       
-      <!-- Main Content -->
+      <!-- Main Content (Rebuilt Simple Contact) -->
       <div class="contact-content">
         <div class="contact-header">
           <h2 class="contact-title">
             <span class="contact-title-text">Contact Me</span>
             <div class="contact-title-underline"></div>
           </h2>
-          <p class="contact-subtitle">Have a question or opportunity? Drop a message below.</p>
+          <p class="contact-subtitle">I usually reply within 24 hours.</p>
         </div>
 
         <% if (typeof submitted !== 'undefined' && submitted) { %>
           <div class="contact-success">
             <i class="fas fa-check-circle"></i>
-            <span>Message sent successfully. I will get back to you soon.</span>
+            <span>Message sent successfully. Thank you!</span>
           </div>
         <% } %>
 
         <div class="contact-panel">
           <form action="/contact" method="POST" class="contact-form" id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-input" id="name" name="name" placeholder="Your full name" required />
-                <div class="form-feedback"></div>
-              </div>
-              <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-input" id="email" name="email" placeholder="your.email@example.com" required />
-                <div class="form-feedback"></div>
-              </div>
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-input" id="name" name="name" placeholder="Your full name" required />
+              <div class="form-feedback"></div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-input" id="email" name="email" placeholder="your.email@example.com" required />
+              <div class="form-feedback"></div>
             </div>
             <div class="form-group">
               <label for="message" class="form-label">Message</label>
               <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Tell me about your project or just say hello!" required></textarea>
               <div class="form-feedback"></div>
             </div>
-            <button type="submit" class="btn-contact" onclick="trackClick('contact-submit', '/')">
-              <i class="fas fa-rocket"></i>
+            <button type="submit" class="btn-contact">
+              <i class="fas fa-paper-plane"></i>
               <span>Send Message</span>
-              <div class="btn-loading">
-                <i class="fas fa-spinner fa-spin"></i>
-                <span>Sending...</span>
-              </div>
             </button>
-            <div id="contactSentMessage" class="sent-message" style="display:none;">Message sent. Thank you!</div>
           </form>
         </div>
       </div>

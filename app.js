@@ -1,8 +1,6 @@
+require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
 const http = require('http');
 const socketIo = require('socket.io');
 
@@ -10,47 +8,33 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-// MongoDB connection
-// mongoose.connect('mongodb://127.0.0.1:27017/portfolioDB', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// }).then(() => {
-//   console.log('Connected to MongoDB');
-// }).catch((err) => {
-//   console.error('MongoDB connection error:', err);
-// });
+// MongoDB removed
 
 
-const mongoURI =
-  process.env.MONGO_URI ||
-  "mongodb+srv://manideep:manu@todocluster.h76u0nm.mongodb.net/tododb?retryWrites=true&w=majority&appName=TodoCluster";
+// const mongoURI =
+//   process.env.MONGO_URI ||
+//   "mongodb+srv://manideep:manu@todocluster.h76u0nm.mongodb.net/tododb?retryWrites=true&w=majority&appName=TodoCluster";
 
-mongoose
-  .connect(mongoURI)
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.error("❌ Mongo Error:", err));
+// mongoose
+//   .connect(mongoURI)
+//   .then(() => console.log("✅ MongoDB Connected"))
+//   .catch((err) => console.error("❌ Mongo Error:", err));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 app.set('view engine', 'ejs');
 
-// Session setup for admin login
-app.use(session({
-  secret: 'your_secret_key',
-  resave: false,
-  saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/portfolioDB' }),
-  cookie: { maxAge: 1000 * 60 * 60 } // 1 hour
-}));
+// Sessions removed (no admin DB)
 
 // Routes
 const mainRoutes = require('./routes/main');
-const adminRoutes = require('./routes/admin');
+// const adminRoutes = require('./routes/admin');
 
 app.use('/', mainRoutes);
-app.use('/admin', adminRoutes);
+// app.use('/admin', adminRoutes);
 
 // Socket.IO connection handling
 const connectedUsers = new Map();
