@@ -24,7 +24,31 @@ const io = socketIo(server);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-app.get('/favicon.ico', (req, res) => res.status(204).end());
+// Serve favicon with proper headers
+app.get('/favicon.ico', (req, res) => {
+  res.setHeader('Content-Type', 'image/png');
+  res.setHeader('Cache-Control', 'public, max-age=31536000'); // Cache for 1 year
+  res.redirect('/Profile pic/LOGO.png');
+});
+
+// Serve favicon for different sizes
+app.get('/favicon-16x16.png', (req, res) => {
+  res.setHeader('Content-Type', 'image/png');
+  res.setHeader('Cache-Control', 'public, max-age=31536000');
+  res.redirect('/Profile pic/LOGO.png');
+});
+
+app.get('/favicon-32x32.png', (req, res) => {
+  res.setHeader('Content-Type', 'image/png');
+  res.setHeader('Cache-Control', 'public, max-age=31536000');
+  res.redirect('/Profile pic/LOGO.png');
+});
+
+app.get('/apple-touch-icon.png', (req, res) => {
+  res.setHeader('Content-Type', 'image/png');
+  res.setHeader('Cache-Control', 'public, max-age=31536000');
+  res.redirect('/Profile pic/LOGO.png');
+});
 app.set('view engine', 'ejs');
 
 // Sessions removed (no admin DB)

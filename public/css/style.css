@@ -32,6 +32,14 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll on animations */
 }
 
+/* Global text justification */
+p, .lead, .mdc-typography--body1, .mdc-typography--body2, 
+.hero-description, .project-description, .education-description, 
+.experience-description, .leadership-description, .contact-subtitle,
+.achievement-desc, .form-label, .footer-copy, .footer-made {
+  text-align: justify;
+}
+
 /* Navbar */
 .navbar {
   background-color: rgba(18, 18, 18, 0.9); /* Slightly transparent dark navbar */
@@ -186,7 +194,7 @@ body {
 }
 
 .leadership-header {
-  text-align: center;
+  text-align: justify;
   margin-bottom: 2rem;
 }
 
@@ -218,6 +226,7 @@ body {
 .leadership-subtitle {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.2rem;
+  text-align: center;
   font-weight: 300;
   letter-spacing: 1px;
   margin-top: 0.5rem;
@@ -499,7 +508,7 @@ body {
 .contact-content {
   position: relative;
   z-index: 2;
-  text-align: center;
+  text-align: justify;
 }
 
 .contact-header {
@@ -531,6 +540,7 @@ body {
 .contact-subtitle {
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.05rem;
+  text-align: center;
   font-weight: 400;
   margin-bottom: 0.25rem;
   max-width: 600px;
@@ -557,7 +567,7 @@ body {
 }
 
 .contact-form .form-group {
-  text-align: left;
+  text-align: justify;
 }
 
 .contact-form .form-label {
@@ -738,7 +748,7 @@ body {
 
 .form-group {
   margin-bottom: 1.5rem;
-  text-align: left;
+  text-align: justify;
 }
 
 .form-label {
@@ -1290,6 +1300,7 @@ body {
 .skills-subtitle {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
+  text-align: center;
   font-weight: 300;
   letter-spacing: 1px;
   margin-top: 0.3rem;
@@ -1620,7 +1631,7 @@ body {
 }
 
 .education-header {
-  text-align: center;
+  text-align: justify;
   margin-bottom: 3rem;
 }
 
@@ -1653,6 +1664,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.2rem;
   font-weight: 300;
+  text-align: center;
   letter-spacing: 1px;
   margin-top: 0.5rem;
 }
@@ -2058,7 +2070,7 @@ body {
 }
 
 .experience-header {
-  text-align: center;
+  text-align: justify;
   margin-bottom: 3rem;
 }
 
@@ -2090,6 +2102,7 @@ body {
 .experience-subtitle {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.2rem;
+  text-align: center;
   font-weight: 300;
   letter-spacing: 1px;
   margin-top: 0.5rem;
@@ -3040,6 +3053,7 @@ body {
 .projects-subtitle {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
+  text-align: center;
   font-weight: 300;
   letter-spacing: 1px;
   margin-top: 0.3rem;
@@ -4158,7 +4172,7 @@ footer .footer-heart {
 
   #about .lead {
     margin-bottom: 1.5rem;
-    text-align: center;
+    text-align: justify;
     padding: 0 10px;
   }
 
@@ -4169,7 +4183,7 @@ footer .footer-heart {
 
   #about h2.mdc-typography--headline4 {
     color: var(--md-sys-color-primary) !important;
-    text-align: center;
+    text-align: justify;
     margin-bottom: 2rem;
     font-size: 2rem;
   }
@@ -4614,7 +4628,7 @@ footer::after {
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: justify;
   }
   .footer-social { justify-content: center; }
   .footer-bottom { flex-direction: column; gap: 0.3rem; }

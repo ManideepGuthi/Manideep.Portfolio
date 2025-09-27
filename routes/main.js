@@ -227,11 +227,10 @@ router.post('/contact', async (req, res) => {
   }
 });
 
-// Track clicks (e.g., from JS)
+// Track clicks (e.g., from JS) - Simplified without database
 router.post('/track-click', async (req, res) => {
   const { element, page } = req.body;
-  const click = new Click({ element, page, ip: req.ip });
-  await click.save();
+  console.log(`Click tracked: ${element} on ${page} from IP: ${req.ip}`);
   res.sendStatus(200);
 });
 
