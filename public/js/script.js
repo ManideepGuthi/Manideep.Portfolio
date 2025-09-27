@@ -49,6 +49,41 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Force start animations
+function startAnimations() {
+  const particles = document.querySelectorAll('.particle');
+  const gradients = document.querySelectorAll('.bg-gradient-1, .bg-gradient-2, .bg-gradient-3');
+  
+  // Force start particle animations
+  particles.forEach((particle, index) => {
+    particle.style.animation = 'none';
+    particle.offsetHeight; // Trigger reflow
+    particle.style.animation = `particleFloat ${12 + index * 2}s linear infinite`;
+    particle.style.animationDelay = `${index * 2}s`;
+  });
+  
+  // Force start gradient animations
+  gradients.forEach((gradient, index) => {
+    gradient.style.animation = 'none';
+    gradient.offsetHeight; // Trigger reflow
+    const durations = ['20s', '25s', '30s'];
+    const directions = ['', ' reverse', ''];
+    gradient.style.animation = `float ${durations[index]} ease-in-out infinite${directions[index]}`;
+  });
+  
+  console.log('Animations started:', particles.length, 'particles and', gradients.length, 'gradients');
+}
+
+// Start animations immediately
+document.addEventListener('DOMContentLoaded', function() {
+  startAnimations();
+});
+
+// Also start on window load as backup
+window.addEventListener('load', function() {
+  startAnimations();
+});
+
 // Cleanup function for page unload
 window.addEventListener('beforeunload', function() {
   // Cleanup any remaining animations
@@ -237,7 +272,8 @@ document.querySelectorAll('.btn').forEach(button => {
   });
 });
 
-// Parallax effect for hero section
+// Parallax effect for hero section - DISABLED to prevent conflicts with CSS animations
+/*
 if (typeof gsap !== 'undefined') {
   gsap.to(".hero-section", {
     backgroundPositionY: "50%",
@@ -250,6 +286,7 @@ if (typeof gsap !== 'undefined') {
     }
   });
 }
+*/
 
 // Dynamic navbar background on scroll
 /* Removed scroll-dependent navbar style changes */
