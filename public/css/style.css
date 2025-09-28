@@ -100,7 +100,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a0a0a 0%, #0f0f23 25%, #1a1a2e 50%, #0f0f23 75%, #0a0a0a 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #0f0f23 30%, #1a1a2e 60%, #0f0f23 100%);
   color: #ffffff;
   padding-top: 2rem;
 }
@@ -112,10 +112,10 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.06) 0%, transparent 70%),
-              radial-gradient(ellipse at top right, rgba(187, 134, 252, 0.05) 0%, transparent 70%),
-              radial-gradient(ellipse at bottom center, rgba(138, 43, 226, 0.04) 0%, transparent 80%),
-              radial-gradient(ellipse at center, rgba(187, 134, 252, 0.03) 0%, transparent 90%);
+  background: radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.03) 0%, transparent 70%),
+              radial-gradient(ellipse at top right, rgba(187, 134, 252, 0.02) 0%, transparent 70%),
+              radial-gradient(ellipse at bottom center, rgba(138, 43, 226, 0.02) 0%, transparent 80%),
+              radial-gradient(ellipse at center, rgba(187, 134, 252, 0.01) 0%, transparent 90%);
   z-index: 0;
   pointer-events: none;
 }
@@ -2416,6 +2416,14 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
     padding: 2rem 0;
   }
   
+  .education-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 20%, #2d1b69 40%, #1a0a2e 60%, #0f0f23 80%, #0a0a0a 100%);
+  }
+  
+  .experience-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 20%, #2d1b69 40%, #1a0a2e 60%, #0f0f23 80%, #0a0a0a 100%);
+  }
+  
   .education-container,
   .experience-container {
     padding: 0 0.8rem;
@@ -2494,6 +2502,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
   /* Leadership Section Responsive */
   .leadership-section {
     padding: 2rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 20%, #2d1b69 40%, #1a0a2e 60%, #0f0f23 80%, #0a0a0a 100%);
   }
   
   .leadership-item {
@@ -2549,6 +2558,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
   .contact-section {
     padding: 2rem 0;
     min-height: auto;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 15%, #2d1b69 35%, #1a0a2e 55%, #0f0f23 75%, #0a0a0a 100%);
   }
   
   .contact-header {
@@ -2670,6 +2680,14 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
     padding: 1.5rem 0;
   }
   
+  .education-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 20%, #2d1b69 40%, #1a0a2e 60%, #0f0f23 80%, #0a0a0a 100%);
+  }
+  
+  .experience-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 20%, #2d1b69 40%, #1a0a2e 60%, #0f0f23 80%, #0a0a0a 100%);
+  }
+  
   .education-container,
   .experience-container {
     padding: 0 0.6rem;
@@ -2743,6 +2761,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
   /* Leadership Section Responsive */
   .leadership-section {
     padding: 2rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 20%, #2d1b69 40%, #1a0a2e 60%, #0f0f23 80%, #0a0a0a 100%);
   }
   
   .leadership-item {
@@ -2798,6 +2817,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
   .contact-section {
     padding: 2rem 0;
     min-height: auto;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 15%, #2d1b69 35%, #1a0a2e 55%, #0f0f23 75%, #0a0a0a 100%);
   }
   
   .contact-header {
@@ -2930,6 +2950,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
 @media (max-width: 768px) {
   .skills-section {
     padding: 1.5rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 20%, #2d1b69 40%, #1a0a2e 60%, #0f0f23 80%, #0a0a0a 100%);
   }
   
   .skills-container {
@@ -3021,6 +3042,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
 @media (max-width: 480px) {
   .skills-section {
     padding: 1rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 20%, #2d1b69 40%, #1a0a2e 60%, #0f0f23 80%, #0a0a0a 100%);
   }
   
   .skills-container {
@@ -3313,6 +3335,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
 @media (max-width: 768px) {
   .projects-section {
     padding: 1rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 15%, #2d1b69 35%, #1a0a2e 55%, #0f0f23 75%, #0a0a0a 100%);
   }
   
   .projects-container {
@@ -3356,6 +3379,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
 @media (max-width: 480px) {
   .projects-section {
     padding: 0.8rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 15%, #2d1b69 35%, #1a0a2e 55%, #0f0f23 75%, #0a0a0a 100%);
   }
   
   .projects-container {
