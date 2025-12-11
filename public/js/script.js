@@ -49,6 +49,42 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// About Me slider
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.about-slider');
+  if (!slider) return;
+  const slides = Array.from(slider.querySelectorAll('.about-slide'));
+  const prevBtn = slider.querySelector('.about-arrow-left');
+  const nextBtn = slider.querySelector('.about-arrow-right');
+  let current = slides.findIndex(s => s.classList.contains('is-active')) || 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  // Swipe support for touch devices
+  let startX = 0;
+  slider.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) {
+      if (dx > 0) { current = (current - 1 + slides.length) % slides.length; }
+      else { current = (current + 1) % slides.length; }
+      showSlide(current);
+    }
+  });
+});
+
 // Force start animations
 function startAnimations() {
   const particles = document.querySelectorAll('.particle');

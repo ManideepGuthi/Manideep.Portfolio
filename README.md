@@ -26,12 +26,7 @@ On contact submission, the message is stored in MongoDB and an email is sent to 
 
 Set these variables in `.env` to forward contact submissions to a Google Form:
 
-```env
-GFORM_ID=1FAIpQLSdFMm_bvyUtn9p6RvD5gY8CkH_awK0qaqm0H4ZGRMcGM6ux0Q
-GFORM_ENTRY_NAME=entry.2005620554
-GFORM_ENTRY_EMAIL=entry.1045781291
-GFORM_ENTRY_MESSAGE=entry.1065046570
-```
+
 
 How to get them:
 - Open your Google Form → three dots → Get pre-filled link.
