@@ -1988,7 +1988,7 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
 .education-degree-year {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 0.5rem;
   gap: 1rem;
 }
@@ -2576,6 +2576,17 @@ p, .lead, .mdc-typography--body1, .mdc-typography--body2,
   .education-card,
   .experience-card {
     padding: 1rem;
+  }
+
+  /* Stack education cards to single column on small screens for better layout */
+  .education-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .education-stats {
+    margin-left: 0;
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .education-card-header,
